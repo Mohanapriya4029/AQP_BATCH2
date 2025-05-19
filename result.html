@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <style>
+      /* Define CSS classes for different AQI levels */
+      .moderate { color: rgb(24, 240, 24); }
+      .poor { color: yellow; }
+      .very-poor { color: orange; }
+      .severe { color: red; }
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            background-image: url("static/result.avif");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .result-box {
+            background-color: #1e1d1d;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(117, 0, 251, 0.5);
+             
+        }
+        h2{
+          text-align: center;
+        }
+        p{
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+        }
+        span{
+          font-size: 35px;
+        }
+        .back{
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          padding: 8px;
+        }
+        .back button{
+          padding: 9px;
+          width: 70px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        .log{
+          position: absolute;
+          top: 10px;
+          left: 100px;
+          padding: 8px;
+        }
+        .log button{
+          padding: 9px;
+          width: 70px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+  </style>
+  </head>
+  <body>
+    <div class="back">
+      <a href="/upload1"><button>Back</button></a>
+    </div>
+    <div class="log">
+      <a href="/register1"><button>Logout</button></a>
+    </div>
+    <div class="result-box">
+     <h1>AQI Prediction Result</h1>
+     <h2>{{prediction}}</h2>
+    <p>Predicted AQI: <span class="{{ aqi_class }}">{{ aqi }}</span></p>
+  </div>
+  </body>
+</html>
